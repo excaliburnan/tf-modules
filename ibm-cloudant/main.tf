@@ -7,7 +7,7 @@ provider "ibm" {
   }
 }
 
-provider {
+provider "ibm" {
   region = var.service_region
   ibmcloud_api_key = var.ibmcloud_api_key
 }
