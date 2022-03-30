@@ -9,6 +9,11 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "webserver_amis" {
-
   type = map
+}
+
+variable "public_key" {
+}
+
+variable "private_key" {
 }
