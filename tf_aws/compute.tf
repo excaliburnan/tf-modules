@@ -13,10 +13,10 @@ resource "aws_instance" "ec2_example" {
         command = "echo public_ip: ${aws_instance.ec2_example.public_ip} > ec2_ip.txt"
     }
 
-   provisioner "file" {
+    provisioner "file" {
             source = "setup.sh"
             destination = "/tmp/bootstrap.sh"
-}
+    }
 
     provisioner "remote-exec" {
         inline = [
@@ -34,7 +34,7 @@ resource "aws_instance" "ec2_example" {
         host = self.public_ip
         type = "ssh"
         user = "ec2-user"
-        private_key = "${file("${var.private_key}")}"
+        private_key = "${var.private_key}"
     }
 
 }
